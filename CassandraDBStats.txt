@@ -1,0 +1,74 @@
+thread - 2000
+itertaion - 250
+ResultCount : 250
+total time taken in ms 115 for processing 250
+
+ResultCount : 19981
+total time taken in ms 7769 for processing 20000
+thread - 1000
+
+thread pool - 1000
+Exception - no host available
+result count Exception - java heap space;
+
+
+counter : 500000
+total time taken in ms 149179 for processing 500000
+
+************************************************************************
+14 dec 2016
+29999
+
+
+thread - 1500
+records -  30000
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+start time : 1481697225184
+counter : 30000
+total time taken in ms 39985 for processing 30000
+
+
+total time taken in ms 41754 for processing 30000 with thread pool -2000 (Exception occured)
+Exception for counting - Exception in inserting data com.datastax.driver.core.exceptions.NoHostAvailableException: All host(s) tried for query failed (tried: /10.237.247.26:9042 (com.datastax.driver.core.TransportException: [/10.237.247.26:9042] Cannot connect))
+record count - 29859
+
+tp00l-2000
+pool-5000
+Exception occured time1481707029476
+total time taken in ms 44474 for processing 30000
+
+start time : 1481712171137
+counter : 30000
+total time taken in ms 45166 for processing 30000
+
+***************************************************************************
+15 DEC 2016
+
+tpool-2000
+total time taken in ms 134035 for processing 75000
+
+thread pool-2000
+rec count-1000000(1 million)
+25 min
+1553.338sec
+
+-----------------------
+
+without pooling-30000 records,2000 pool
+
+Caused by: com.datastax.driver.core.exceptions.NoHostAvailableException: All host(s) tried for query failed (tried: /10.237.247.26:9042 (com.datastax.driver.core.exceptions.DriverException: Timeout while trying to acquire available connection (you may want to increase the driver number of per-host connections)))
+	at com.datastax.driver.core.RequestHandler.reportNoMoreHosts(RequestHandler.java:217)
+	at com.datastax.driver.core.RequestHandler.access$1000(RequestHandler.java:44)
+	at com.datastax.driver.core.RequestHandler$SpeculativeExecution.sendRequest(RequestHandler.java:276)
+	at com.datastax.driver.core.RequestHandler.startNewExecution(RequestHandler.java:117)
+	at com.datastax.driver.core.RequestHandler.sendRequest(RequestHandler.java:93)
+	at com.datastax.driver.core.SessionManager.executeAsync(SessionManager.java:125)
+	... 6 more
+total time taken in ms 48164 for processing 30000
+----------------------------
+with pooling-30000 records,2000 pool
+total time taken in ms 51016 for processing 30000
+no exception
+---------------------------
